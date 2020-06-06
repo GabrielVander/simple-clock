@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import ClockPage from "./ClockPage/ClockPage";
+import ClockPage from "./Components/ClockPage/ClockPage";
 
 function App() {
   return (
