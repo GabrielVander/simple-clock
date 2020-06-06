@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -6,7 +6,8 @@ import Container from "react-bootstrap/Container";
 import './Clock.css';
 
 function Clock() {
-    const date  = new Date();
+    const [date, setDate]  = useState(new Date());
+    setInterval(() => setDate(new Date()), 1000);
 
     return (
         <Container className='custom-container'>
@@ -14,33 +15,30 @@ function Clock() {
                 <Col>
                     <Card className='card-container'>
                         <Card.Body>
-                            <Card.Text>
-                                <Row noGutters className='show-grid'>
-                                    <Col>
-                                        {date
-                                            .toLocaleTimeString()
-                                            .split(':')[0]}
-                                    </Col>
-                                    <Col className='border-right border-left'>
-                                        {date
-                                            .toLocaleTimeString()
-                                            .split(':')[1]}
-                                    </Col>
-                                    <Col className='border-right border-left'>
-                                        {date
-                                            .toLocaleTimeString()
-                                            .split(':')[2]
-                                            .split(' ')[0]}
-                                    </Col>
-                                    <Col>
-                                        {date
-                                            .toLocaleTimeString()
-                                            .split(':')[2]
-                                            .split(' ')[1]}
-                                    </Col>
-                                </Row>
-                                {}
-                            </Card.Text>
+                            <Row noGutters>
+                                <Col>
+                                    {date
+                                        .toLocaleTimeString()
+                                        .split(':')[0]}
+                                </Col>
+                                <Col className='border-right border-left'>
+                                    {date
+                                        .toLocaleTimeString()
+                                        .split(':')[1]}
+                                </Col>
+                                <Col className='border-right border-left'>
+                                    {date
+                                        .toLocaleTimeString()
+                                        .split(':')[2]
+                                        .split(' ')[0]}
+                                </Col>
+                                <Col>
+                                    {date
+                                        .toLocaleTimeString()
+                                        .split(':')[2]
+                                        .split(' ')[1]}
+                                </Col>
+                            </Row>
                         </Card.Body>
                     </Card>
                 </Col>
