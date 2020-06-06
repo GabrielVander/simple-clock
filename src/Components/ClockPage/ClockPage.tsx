@@ -1,5 +1,5 @@
 import React from "react";
-import Clock from "./Clock/Clock";
+import Clock from "../Clock/Clock";
 import Navbar from "react-bootstrap/Navbar";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
